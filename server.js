@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const request = require('request');
 const bodyParser = require('body-parser');
+var port = process.env.port || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json())
@@ -34,6 +35,6 @@ app.post('/', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log("server running at port : 3000")
+app.listen(port, () => {
+  console.log("server running")
 })
